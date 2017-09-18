@@ -1,0 +1,11 @@
+D:\Diplomski\Planner\Planner.Service.Common\bin\Debug\Planner.Service.Common.exe.config
+D:\Diplomski\Planner\Planner.Service.Common\bin\Debug\Planner.Service.Common.exe
+D:\Diplomski\Planner\Planner.Service.Common\bin\Debug\Planner.Service.Common.pdb
+D:\Diplomski\Planner\Planner.Service.Common\obj\Debug\Planner.Service.Common.csprojResolveAssemblyReference.cache
+D:\Diplomski\Planner\Planner.Service.Common\obj\Debug\Planner.Service.Common.csproj.CoreCompileInputs.cache
+D:\Diplomski\Planner\Planner.Service.Common\obj\Debug\Planner.Service.Common.exe
+D:\Diplomski\Planner\Planner.Service.Common\obj\Debug\Planner.Service.Common.pdb
+D:\Diplomski\Planner\Planner.Service.Common\bin\Debug\Planner.Model.exe
+D:\Diplomski\Planner\Planner.Service.Common\bin\Debug\Dapper.Contrib.dll
+D:\Diplomski\Planner\Planner.Service.Common\bin\Debug\Planner.Model.pdb
+D:\Diplomski\Planner\Planner.Service.Common\bin\Debug\Planner.Model.exe.config
