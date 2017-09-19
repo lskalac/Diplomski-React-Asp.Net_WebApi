@@ -7,3 +7,8 @@ D:\Diplomski\Planner\Planner.Database\obj\Debug\Model.xml
 D:\Diplomski\Planner\Planner.Database\obj\Debug\refactor.xml
 D:\Diplomski\Planner\Planner.Database\obj\Debug\postdeploy.sql
 D:\Diplomski\Planner\Planner.Database\obj\Debug\predeploy.sql
+D:\Diplomski-React-Asp.Net_WebApi\Planner\Planner.Database\bin\Debug\Planner.Database.dacpac
+D:\Diplomski-React-Asp.Net_WebApi\Planner\Planner.Database\bin\Debug\Planner.Database.dll
+D:\Diplomski-React-Asp.Net_WebApi\Planner\Planner.Database\bin\Debug\Planner.Database.pdb
+D:\Diplomski-React-Asp.Net_WebApi\Planner\Planner.Database\obj\Debug\Planner.Database.dll
+D:\Diplomski-React-Asp.Net_WebApi\Planner\Planner.Database\obj\Debug\Planner.Database.pdb

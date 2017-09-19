@@ -257,20 +257,6 @@
     <Folder Include="Views\Category\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Planner.Model\Planner.Model.csproj">
-      <Project>{B4E5A2AA-AEAB-4A36-A048-7BC9D26E0F5A}</Project>
-      <Name>Planner.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Planner.Service.Common\Planner.Service.Common.csproj">
-      <Project>{b6e04d94-265f-4890-a432-c361165bff7e}</Project>
-      <Name>Planner.Service.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Planner.Service\Planner.Service.csproj">
-      <Project>{089f7c09-5c1f-4028-826d-bda5e08b47b8}</Project>
-      <Name>Planner.Service</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />

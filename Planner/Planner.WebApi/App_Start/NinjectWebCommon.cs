@@ -13,7 +13,6 @@ namespace Planner.WebApi.App_Start
     using System.Web.Http;
     using System.Linq;
     using Ninject.Modules;
-    using Planner.Service;
     using Ninject.Web.WebApi;
 
     public static class NinjectWebCommon 
@@ -69,11 +68,11 @@ namespace Planner.WebApi.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            var modules = new NinjectModule[] {
-                new ServiceDIModule()
-            };
+            //var modules = new NinjectModule[] {
+            //    new ServiceDIModule()
+            //};
 
-            kernel.Load(modules);
+            //kernel.Load(modules);
         }        
     }
 }

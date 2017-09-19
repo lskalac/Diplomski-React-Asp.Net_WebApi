@@ -121,3 +121,7 @@ D:\Diplomski\Planner\Planner.WebApi\bin\System.Web.Http.Cors.dll
 D:\Diplomski\Planner\Planner.WebApi\bin\System.Web.Http.Cors.xml
 D:\Diplomski\Planner\Planner.WebApi\bin\Dapper.dll
 D:\Diplomski\Planner\Planner.WebApi\bin\Dapper.xml
+D:\Diplomski-React-Asp.Net_WebApi\Planner\Planner.WebApi\obj\Debug\Planner.WebApi.csprojResolveAssemblyReference.cache
+D:\Diplomski-React-Asp.Net_WebApi\Planner\Planner.WebApi\obj\Debug\Planner.WebApi.csproj.CoreCompileInputs.cache
+D:\Diplomski-React-Asp.Net_WebApi\Planner\Planner.WebApi\obj\Debug\Planner.WebApi.dll
+D:\Diplomski-React-Asp.Net_WebApi\Planner\Planner.WebApi\obj\Debug\Planner.WebApi.pdb
