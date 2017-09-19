@@ -19,7 +19,7 @@ class App extends React.Component {
 
     componentDidMount() {
 
-        axios.get('http://localhost:59342/api/note')
+        axios.get('http://localhost:52795/api/note')
             .then((response) => {
                 let activeNote = response.data.find(function (note) {
                     return note.IsActive === true;
@@ -34,14 +34,14 @@ class App extends React.Component {
                 });
             });
 
-        axios.get('http://localhost:59342/api/task/priority')
+        axios.get('http://localhost:52795/api/task/priority')
             .then((response) => {
                 this.setState({
                     tasksByPriority: response.data
                 });
             });
 
-        axios.get('http://localhost:59342/api/task/today')
+        axios.get('http://localhost:52795/api/task/today')
             .then((response) => {
                 this.setState({
                     todaysTasks: response.data
@@ -50,7 +50,7 @@ class App extends React.Component {
     }
 
     handleNoteDelete(noteId) {
-        axios.delete('http://localhost:59342/api/note/' + noteId)
+        axios.delete('http://localhost:52795/api/note/' + noteId)
             .then(function (response) {
                 this.setState({
                     notes: this.state.notes.filter(function (note) { return note.NoteId !== noteId })
@@ -59,7 +59,7 @@ class App extends React.Component {
     }
 
     handleNoteMark(noteId) {
-        axios.put('http://localhost:59342/api/note/mark', { NoteId: noteId })
+        axios.put('http://localhost:52795/api/note/mark', { NoteId: noteId })
             .then(function (response) {
                 this.setState({
                     activeNote: this.state.notes.find(function (note) {
