@@ -1,3 +1,3 @@
 # Diplomski rad
 
-Simple planner aplication
+Simple planner application
