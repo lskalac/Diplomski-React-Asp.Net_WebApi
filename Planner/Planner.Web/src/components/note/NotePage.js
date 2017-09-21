@@ -1,6 +1,7 @@
 import React from 'react';
 import PageTitle from '../common/PageTitle';
 import NoteTable from '../note/NoteTable';
+import NoteForm from '../note/NoteForm';
 import axios from "axios";
 
 class NotePage extends React.Component {
@@ -10,9 +11,7 @@ class NotePage extends React.Component {
                 <PageTitle title="Notes" />
                 <div className="panel panel-default">
                     <div className="panel-heading">
-                        <div className="input-group col-lg-2">
-                            <button className="btn btn-success"> Add new </button>
-                        </div>
+                        <NoteForm onFormSubmit={this.props.onNoteFormSubmit} />
                     </div>
                     <div className="panel-body">
                         <NoteTable
@@ -21,8 +20,9 @@ class NotePage extends React.Component {
                             onMark={this.props.onNoteMark}
                         />
                     </div>
-                    </div>
                 </div>
+
+           </div>
         );
     }
 }

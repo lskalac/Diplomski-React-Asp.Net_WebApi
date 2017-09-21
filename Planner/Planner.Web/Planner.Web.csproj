@@ -88,6 +88,7 @@
     <Content Include="src\components\common\PageTitle.js" />
     <Content Include="src\components\home\HomePage.js" />
     <Content Include="src\components\note\NoteActive.js" />
+    <Content Include="src\components\note\NoteForm.js" />
     <Content Include="src\components\note\NotePage.js" />
     <Content Include="src\components\note\NoteTable.js" />
     <Content Include="src\components\note\NoteTableRow.js" />

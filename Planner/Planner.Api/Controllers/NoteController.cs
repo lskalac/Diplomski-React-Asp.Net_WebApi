@@ -32,8 +32,9 @@ namespace Planner.Api.Controllers
         [HttpPost, Route("")]
         public async Task<IHttpActionResult> Insert([FromBody]Note note)
         {
-            if (await _noteService.InsertAsync(note) > 0)
-                return Ok();
+            var noteId = await _noteService.InsertAsync(note);
+            if (noteId > 0)
+                return Ok(noteId);
             return StatusCode(HttpStatusCode.NotModified);
         }
 

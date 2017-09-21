@@ -11,5 +11,6 @@ namespace Planner.Api.Dal
         Task<int> ExecuteAsync(string sql, object param = null);
         Task<IEnumerable<T>> QueryAsync<T>(string sql, object param = null) where T : class;
         Task<T> QuerySingleAsync<T>(string sql, object param = null) where T : class;
+        Task<int> QuerySingleAsync(string sql, object param = null);
     }
 }

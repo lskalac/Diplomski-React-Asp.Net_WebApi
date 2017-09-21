@@ -37,5 +37,12 @@ namespace Planner.Api.Dal
             }
         }
 
+        public async Task<int> QuerySingleAsync(string sql, object param = null)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                return await connection.QueryFirstOrDefaultAsync<int>(sql, param);
+            }
+        }
     }
 }

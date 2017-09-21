@@ -30,7 +30,7 @@ namespace Planner.Api.Services
 
         public Task<int> InsertAsync(Note note)
         {
-            return _repository.ExecuteAsync(@"
+            return _repository.QuerySingleAsync(@"
             Declare @IdentityOutput table (id int);
             Insert into dbo.Note(Title, Text, IsActive)
             output inserted.NoteId into @IdentityOutput

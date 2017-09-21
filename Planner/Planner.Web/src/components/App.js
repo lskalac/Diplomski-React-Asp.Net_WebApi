@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import Header from './common/Header';
 import axios from 'axios';
+import Notifications, { notify } from 'react-notify-toast';
 
 class App extends React.Component {
     constructor(props) {
@@ -15,6 +16,7 @@ class App extends React.Component {
 
         this.handleNoteDelete = this.handleNoteDelete.bind(this);
         this.handleNoteMark = this.handleNoteMark.bind(this);
+        this.handleNoteFormSumit = this.handleNoteFormSumit.bind(this);
     }
 
     componentDidMount() {
@@ -52,21 +54,44 @@ class App extends React.Component {
     handleNoteDelete(noteId) {
         axios.delete('http://localhost:52795/api/note/' + noteId)
             .then(function (response) {
+                notify.show("Note removed successfully.", "success");
                 this.setState({
                     notes: this.state.notes.filter(function (note) { return note.NoteId !== noteId })
                 });
-            }.bind(this));
+            }.bind(this))
+            .catch(function (error) {
+                notify.show("An error occurd.", "error");
+            });  
     }
 
     handleNoteMark(noteId) {
         axios.put('http://localhost:52795/api/note/mark', { NoteId: noteId })
             .then(function (response) {
+                notify.show("Note marked as active successfully.", "success");
                 this.setState({
                     activeNote: this.state.notes.find(function (note) {
                         return note.NoteId === noteId;
                     })
                 });
-            }.bind(this));  
+            }.bind(this))
+            .catch(function (error) {
+                notify.show("An error occurd.", "error");
+            });  
+    }
+
+    handleNoteFormSumit(note) {
+        axios.post('http://localhost:52795/api/note', note)
+            .then(function (response) {
+                notify.show("Note inserted successfully.", "success");
+                note.NoteId = response.data;
+                this.setState({
+                    notes: this.state.notes.concat(note)
+                });
+                $('#noteModal').modal('hide');
+            }.bind(this))
+            .catch(function (error) {
+                notify.show("An error occurd.", "error");
+            });  
     }
 
     render() {
@@ -76,12 +101,14 @@ class App extends React.Component {
                 activeNote: this.state.activeNote,
                 onNoteDelete: this.handleNoteDelete,
                 onNoteMark: this.handleNoteMark,
+                onNoteFormSubmit: this.handleNoteFormSumit,
                 tasksByPriority: this.state.tasksByPriority,
                 todaysTasks: this.state.todaysTasks
             })
         });
         return (
             <div>
+              <Notifications />
               <Header />
               <div className="container">
                   {children}
