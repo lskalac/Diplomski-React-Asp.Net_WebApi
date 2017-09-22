@@ -55,34 +55,37 @@ namespace Planner.Api.Controllers
             return Ok(await _taskService.GetTodaysTasks());
         }
 
-        //[HttpGet, Route("{id}")]
-        //public async Task<IHttpActionResult> GetById([FromUri]int id)
-        //{
-        //    return Ok(await _taskService.GetByIdAsync(id));
-        //}
+        [HttpPut, Route("{id}/close")]
+        public async Task<IHttpActionResult> CloseTask(int id)
+        {
+            if (await _taskService.CloseTaskAsync(id))
+                return Ok();
+            return StatusCode(HttpStatusCode.NotModified);
+        }
 
-        //[HttpPost, Route("")]
-        //public async Task<IHttpActionResult> Insert([FromBody]Planner.Model.Task note)
-        //{
-        //    if (await _taskService.InsertAsync(note) > 0)
-        //        return Ok();
-        //    return StatusCode(HttpStatusCode.NotModified);
-        //}
 
-        //[HttpPut, Route("")]
-        //public async Task<IHttpActionResult> Update([FromBody]Planner.Model.Task note)
-        //{
-        //    if (await _taskService.UpdateAsync(note))
-        //        return Ok();
-        //    return StatusCode(HttpStatusCode.NotModified);
-        //}
+        [HttpPost, Route("")]
+        public async Task<IHttpActionResult> Insert([FromBody]Models.Task task)
+        {
+            if (await _taskService.InsertAsync(task) > 0)
+                return Ok();
+            return StatusCode(HttpStatusCode.NotModified);
+        }
 
-        //[HttpDelete, Route("{id}")]
-        //public async Task<IHttpActionResult> Delete(int id)
-        //{
-        //    if (await _taskService.DeleteAsync(id))
-        //        return Ok();
-        //    return StatusCode(HttpStatusCode.NotModified);
-        //}
+        [HttpPut, Route("")]
+        public async Task<IHttpActionResult> Update([FromBody]Models.Task task)
+        {
+            if (await _taskService.UpdateAsync(task))
+                return Ok();
+            return StatusCode(HttpStatusCode.NotModified);
+        }
+
+        [HttpDelete, Route("{id}")]
+        public async Task<IHttpActionResult> Delete(int id)
+        {
+            if (await _taskService.DeleteAsync(id))
+                return Ok();
+            return StatusCode(HttpStatusCode.NotModified);
+        }
     }
 }

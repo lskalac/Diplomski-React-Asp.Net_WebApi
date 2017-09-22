@@ -12,3 +12,8 @@ D:\Diplomski-React-Asp.Net_WebApi\Planner\Planner.Database\bin\Debug\Planner.Dat
 D:\Diplomski-React-Asp.Net_WebApi\Planner\Planner.Database\bin\Debug\Planner.Database.pdb
 D:\Diplomski-React-Asp.Net_WebApi\Planner\Planner.Database\obj\Debug\Planner.Database.dll
 D:\Diplomski-React-Asp.Net_WebApi\Planner\Planner.Database\obj\Debug\Planner.Database.pdb
+D:\Projects\Diplomski-React-Asp.Net_WebApi\Planner\Planner.Database\bin\Debug\Planner.Database.dacpac
+D:\Projects\Diplomski-React-Asp.Net_WebApi\Planner\Planner.Database\bin\Debug\Planner.Database.dll
+D:\Projects\Diplomski-React-Asp.Net_WebApi\Planner\Planner.Database\bin\Debug\Planner.Database.pdb
+D:\Projects\Diplomski-React-Asp.Net_WebApi\Planner\Planner.Database\obj\Debug\Planner.Database.dll
+D:\Projects\Diplomski-React-Asp.Net_WebApi\Planner\Planner.Database\obj\Debug\Planner.Database.pdb

@@ -55,24 +55,44 @@ namespace Planner.Api.Services
             return tasks.OrderBy(x => x.DueDateTime).ThenBy(x => x.PriorityId);
         }
 
-        //public Task<Model.Task> GetByIdAsync(int id)
-        //{
-        //    return _repository.GetById<Model.Task>(id);
-        //}
+        public Task<int> InsertAsync(Models.Task task)
+        {
+            return _repository.QuerySingleAsync(@"
+            Declare @IdentityOutput table (id int);
+            Insert into dbo.Task(Name, Description, PriorityId, IsCompleted, DueDateTime)
+            output inserted.NoteId into @IdentityOutput
+            values (@Name, @Description, @PriorityId, @IsCompleted, @DueDateTime);
+            Select id from @IdentityOutput;",
+            task);
+        }
 
-        //public Task<int> InsertAsync(Model.Task task)
-        //{
-        //    return _repository.InsertAsync(task);
-        //}
+        public async Task<bool> UpdateAsync(Models.Task task)
+        {
+            return (await _repository.ExecuteAsync(@"
+            update dbo.Task
+            set Name = @Name,
+            Description = @Description,
+            PriorityId = @PriorityId
+            IsCompleted = @IsCompleted,
+            DueDateTime = @DueDateTime;",
+            task)) > 0;
+        }
 
-        //public Task<bool> UpdateAsync(Model.Task task)
-        //{
-        //    return _repository.UpdateAsync(task);
-        //}
+        public async Task<bool> DeleteAsync(int id)
+        {
+            return (await _repository.ExecuteAsync(@"
+            delete from dbo.Task
+            where TaskId = @TaskId;", 
+            new { TaskId = id })) > 0;
+        }
 
-        //public Task<bool> DeleteAsync(int id)
-        //{
-        //    return _repository.DeleteAsync<Model.Task>(id);
-        //}
+        public async Task<bool> CloseTaskAsync(int id)
+        {
+            return (await _repository.ExecuteAsync(@"
+            update dbo.Task
+            set IsCompleted = 1
+            where TaskId = @TaskId;",
+            new { TaskId = id })) > 0;
+        }
     }
 }

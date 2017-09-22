@@ -17,7 +17,7 @@ class TaskPanel extends React.Component{
                     {this.props.name}
                 </div>
                 <div className="panel-body">
-                    <TaskList tasks={this.props.tasks} />
+                    <TaskList tasks={this.props.tasks} onTaskClose={this.props.onTaskClose} />
 
                     <button className="btn btn-success col-lg-12"> Add new </button>
                 </div>

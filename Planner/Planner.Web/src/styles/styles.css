@@ -15,3 +15,8 @@ body {
 .m-b-sm {
   margin-bottom: 10px;
 }
+
+
+.strikethrough {
+  text-decoration: line-through;
+}

@@ -72,6 +72,8 @@
     <Content Include=".editorconfig" />
     <Content Include=".eslintrc" />
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\planner-web - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\planner-web - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -92,6 +94,7 @@
     <Content Include="src\components\note\NotePage.js" />
     <Content Include="src\components\note\NoteTable.js" />
     <Content Include="src\components\note\NoteTableRow.js" />
+    <Content Include="src\components\task\TaskForm.js" />
     <Content Include="src\components\task\TaskList.js" />
     <Content Include="src\components\task\TaskListItem.js" />
     <Content Include="src\components\task\TaskPage.js" />
@@ -105,7 +108,6 @@
     <Content Include="src\styles\styles.css" />
     <Content Include="tools\srcServer.js" />
     <Content Include="tools\startMessage.js" />
-    <Content Include="tools\testSetup.js" />
     <Content Include="Web.config" />
     <Content Include="webpack.config.dev.js" />
   </ItemGroup>

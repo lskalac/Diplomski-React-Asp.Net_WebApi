@@ -8,10 +8,11 @@ class TaskPage extends React.Component{
         const taskPanels = this.props.tasksByPriority.map((priority) => (
             <div className="col-lg-4">
               <TaskPanel
-                  key={priority.Id}
-                  id={priority.Id}
-                  name={priority.Name}
-                  tasks={priority.Tasks}
+                    key={priority.Id}
+                    id={priority.Id}
+                    name={priority.Name}
+                    tasks={priority.Tasks}
+                    onTaskClose={this.props.onTaskClose}
                 />
             </div>
         ));

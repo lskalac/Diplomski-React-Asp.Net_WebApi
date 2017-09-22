@@ -1,12 +1,26 @@
 import React from 'react';
 
-const TaskListItem = (props) => {
-    return (
-        <li className="list-group-item">
-            <span className="pull-right"> <input type="checkbox" /> </span>
-            <span>{props.dateTime} <br /> {props.name}</span>
-        </li>
-    );
+class TaskListItem extends React.Component{
+    constructor(props) {
+        super(props);
+
+        this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
+    }
+
+    handleCheckboxChange() {
+        this.props.onTaskClose(this.props.id);
+    }
+
+    render() {
+        const itemClass = this.props.IsComplited ? "strikethrough" : "";
+        const isDisabled = this.props.IsComplited ? true : false;
+        return (
+            <li className="list-group-item">
+                <span className="pull-right"> <input type="checkbox" checked={this.props.IsComplited} onChange={this.handleCheckboxChange} disabled={isDisabled} /> </span>
+                <span className={itemClass}>{this.props.dateTime} <br /> {this.props.name}</span>
+            </li>
+        );
+    }
 }
 
 export default TaskListItem;

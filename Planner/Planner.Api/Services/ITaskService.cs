@@ -8,9 +8,9 @@ namespace Planner.Api.Services
         Task<IEnumerable<Models.Task>> GetAsync();
         Task<IEnumerable<Models.Task>> GetByPriority(int id);
         Task<IEnumerable<Models.Task>> GetTodaysTasks();
-        //Task<Planner.Model.Task> GetByIdAsync(int id);
-        //Task<int> InsertAsync(Planner.Model.Task task);
-        //Task<bool> UpdateAsync(Planner.Model.Task task);
-        //Task<bool> DeleteAsync(int id);
+        Task<bool> CloseTaskAsync(int id);
+        Task<int> InsertAsync(Models.Task task);
+        Task<bool> UpdateAsync(Models.Task task);
+        Task<bool> DeleteAsync(int id);
     }
 }
