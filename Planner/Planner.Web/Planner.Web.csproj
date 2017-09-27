@@ -86,6 +86,7 @@
     <Content Include="src\api\mockAuthorApi.js" />
     <Content Include="src\api\mockCourseApi.js" />
     <Content Include="src\components\App.js" />
+    <Content Include="src\components\common\DateTimePicker.js" />
     <Content Include="src\components\common\Header.js" />
     <Content Include="src\components\common\PageTitle.js" />
     <Content Include="src\components\home\HomePage.js" />

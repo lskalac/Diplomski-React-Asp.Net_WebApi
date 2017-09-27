@@ -1,4 +1,7 @@
 import React from 'react';
+import DateTimeField from "react-bootstrap-datetimepicker";
+import MaskedInput from 'react-maskedinput';
+
 
 class TaskForm extends React.Component {
     constructor(props) {
@@ -63,10 +66,10 @@ class TaskForm extends React.Component {
                                             value={this.state.description} onChange={this.handleDescriptionChange} > </textarea>
                                     </div>
                                     <div className="form-group">
-                                        <label for="text"> Due Date </label>
-                                        <input type="text" className="form-control" id="text" placeholder="dd/MM/yyyy HH:mm"
-                                            value={this.state.dueDateTime} onChange={this.handleTimeChange} /> 
+                                        <label for="text"> Due Date: </label>
+                                        <MaskedInput className="form-control" mask="11/11/1111 11:11" name="dueDate" placeholder="dd/MM/yyyy HH:mm" onChange={this.handleTimeChange} />
                                     </div>
+
                                 </form>
                             </div>
                             <div className="modal-footer">
