@@ -97,7 +97,7 @@ class App extends React.Component {
     }
 
     handleTaskClose(taskId) {
-        axios.put('http://localhost:52975/api/task/close', {taskId : taskId})
+        axios.put('http://localhost:52975/api/task/' + taskId + '/close', {taskId : taskId})
             .then(function (response) {
                 notify.show("Task closed successfully.", "success");
                 this.setState({
@@ -123,7 +123,7 @@ class App extends React.Component {
                 notify.show("Task inserted successfully.", "success");
                 task.TaskId = response.data;
                 this.setState({
-                    notes: this.state.tasksByPriority.concat(note)
+                    tasksByPriority: this.state.tasksByPriority.concat(note)
                 });
                 $('#taskModal').modal('hide');
             }.bind(this))
@@ -142,7 +142,8 @@ class App extends React.Component {
                 onNoteFormSubmit: this.handleNoteFormSumit,
                 tasksByPriority: this.state.tasksByPriority,
                 todaysTasks: this.state.todaysTasks,
-                onTaskClose: this.handleTaskClose
+                onTaskClose: this.handleTaskClose,
+                onTaskFormSubmit: this.handleTaskFormSubmit
             })
         });
         return (

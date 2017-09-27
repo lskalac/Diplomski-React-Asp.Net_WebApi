@@ -41,7 +41,16 @@ namespace Planner.Api.Dal
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                return await connection.QueryFirstOrDefaultAsync<int>(sql, param);
+                try
+                {
+                    return await connection.QueryFirstOrDefaultAsync<int>(sql, param);
+
+                }
+                catch (Exception ex)
+                {
+
+                    throw;
+                }
             }
         }
     }

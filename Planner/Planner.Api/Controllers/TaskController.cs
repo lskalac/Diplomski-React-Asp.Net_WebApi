@@ -67,8 +67,9 @@ namespace Planner.Api.Controllers
         [HttpPost, Route("")]
         public async Task<IHttpActionResult> Insert([FromBody]Models.Task task)
         {
-            if (await _taskService.InsertAsync(task) > 0)
-                return Ok();
+            var taskId = await _taskService.InsertAsync(task);
+            if (taskId > 0)
+                return Ok(taskId);
             return StatusCode(HttpStatusCode.NotModified);
         }
 

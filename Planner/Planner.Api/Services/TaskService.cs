@@ -57,13 +57,23 @@ namespace Planner.Api.Services
 
         public Task<int> InsertAsync(Models.Task task)
         {
-            return _repository.QuerySingleAsync(@"
-            Declare @IdentityOutput table (id int);
-            Insert into dbo.Task(Name, Description, PriorityId, IsCompleted, DueDateTime)
-            output inserted.NoteId into @IdentityOutput
-            values (@Name, @Description, @PriorityId, @IsCompleted, @DueDateTime);
-            Select id from @IdentityOutput;",
-            task);
+            try
+            {
+                task.DueDateTime = DateTime.ParseExact(task.DueDateTimeToString, "dd/MM/yyyy HH:mm", CultureInfo.InvariantCulture);
+                return _repository.QuerySingleAsync(@"
+                Declare @IdentityOutput table (id int);
+                Insert into dbo.Task(Name, Description, PriorityId, IsCompleted, DueDateTime)
+                output inserted.TaskId into @IdentityOutput
+                values (@Name, @Description, @PriorityId, @IsCompleted, @DueDateTime);
+                Select id from @IdentityOutput;",
+                    task);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
         }
 
         public async Task<bool> UpdateAsync(Models.Task task)

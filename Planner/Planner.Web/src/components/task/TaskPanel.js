@@ -1,5 +1,6 @@
 import React from 'react';
 import TaskList from '../task/TaskList';
+import TaskForm from '../task/TaskForm';
 
 class TaskPanel extends React.Component{
     render() {
@@ -18,8 +19,7 @@ class TaskPanel extends React.Component{
                 </div>
                 <div className="panel-body">
                     <TaskList tasks={this.props.tasks} onTaskClose={this.props.onTaskClose} />
-
-                    <button className="btn btn-success col-lg-12"> Add new </button>
+                    <TaskForm priorityId={this.props.id} onFormSubmit={this.props.onFormSubmit} />
                 </div>
             </div>
         );

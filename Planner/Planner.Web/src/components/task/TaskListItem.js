@@ -12,11 +12,11 @@ class TaskListItem extends React.Component{
     }
 
     render() {
-        const itemClass = this.props.IsComplited ? "strikethrough" : "";
-        const isDisabled = this.props.IsComplited ? true : false;
+        const itemClass = this.props.isCompleted ? "strikethrough" : "";
+        const isDisabled = this.props.isCompleted ? true : false;
         return (
             <li className="list-group-item">
-                <span className="pull-right"> <input type="checkbox" checked={this.props.IsComplited} onChange={this.handleCheckboxChange} disabled={isDisabled} /> </span>
+                <span className="pull-right"> <input type="checkbox" checked={this.props.isCompleted} onChange={this.handleCheckboxChange} disabled={isDisabled} /> </span>
                 <span className={itemClass}>{this.props.dateTime} <br /> {this.props.name}</span>
             </li>
         );

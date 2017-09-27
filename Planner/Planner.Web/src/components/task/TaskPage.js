@@ -13,6 +13,7 @@ class TaskPage extends React.Component{
                     name={priority.Name}
                     tasks={priority.Tasks}
                     onTaskClose={this.props.onTaskClose}
+                    onFormSubmit={this.props.onTaskFormSubmit}
                 />
             </div>
         ));

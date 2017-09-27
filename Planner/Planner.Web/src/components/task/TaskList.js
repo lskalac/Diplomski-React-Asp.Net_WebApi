@@ -8,8 +8,9 @@ class TaskList extends React.Component{
                 key={task.TaskId}
                 id={task.TaskId}
                 name={task.Name}
+                description={task.Description}
                 dateTime={task.DueDateTimeToString}
-                IsComplited={task.IsCompleted}
+                isCompleted={task.IsCompleted}
                 onTaskClose={this.props.onTaskClose}
             />
         ));
