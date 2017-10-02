@@ -105,6 +105,8 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
   popd
 )
 
+call :ExecuteCmd npm install
+call :ExecuteCmd npm start
 
 :: 4. Build the webclient
 IF EXIST "%DEPLOYMENT_TARGET%\Gulpfile.js" (

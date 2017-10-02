@@ -2,7 +2,6 @@ import React from 'react';
 import PageTitle from '../common/PageTitle';
 import NoteTable from '../note/NoteTable';
 import NoteForm from '../note/NoteForm';
-import axios from "axios";
 
 class NotePage extends React.Component {
     render() {
@@ -28,3 +27,5 @@ class NotePage extends React.Component {
 }
 
 export default NotePage;
+
+

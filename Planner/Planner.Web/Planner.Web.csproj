@@ -71,9 +71,12 @@
     <Content Include=".babelrc" />
     <Content Include=".editorconfig" />
     <Content Include=".eslintrc" />
+    <Content Include="deploy.cmd" />
+    <Content Include=".deployment" />
+    <Content Include=".gitignore" />
+    <Content Include="package-lock.json" />
     <None Include="packages.config" />
-    <None Include="Properties\PublishProfiles\planner-web - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\planner-web - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\PlannerWeb20170928031926 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -86,7 +89,6 @@
     <Content Include="src\api\mockAuthorApi.js" />
     <Content Include="src\api\mockCourseApi.js" />
     <Content Include="src\components\App.js" />
-    <Content Include="src\components\common\DateTimePicker.js" />
     <Content Include="src\components\common\Header.js" />
     <Content Include="src\components\common\PageTitle.js" />
     <Content Include="src\components\home\HomePage.js" />

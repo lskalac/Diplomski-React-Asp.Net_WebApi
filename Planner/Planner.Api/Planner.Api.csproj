@@ -136,8 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Properties\PublishProfiles\planner-webApi - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\planner-webApi - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\PlannerApi20170928031451 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
